@@ -36,7 +36,7 @@ void Funcionario::DefinirClientes()
         cin >> resp;
         if(resp == 'n')
         {
-            resposta = true;
+            resposta = !resposta;
         }else
             system("cls");
     }while(resposta);
@@ -44,7 +44,8 @@ void Funcionario::DefinirClientes()
 
 void Funcionario::usar()
 {
-    DefinirClientes();
+    Clientes clientes;DefinirClientes();
+
 
     int resp;
 
@@ -57,6 +58,7 @@ void Funcionario::usar()
         cout << "1- Verificar Quartos e Clientes: \n";
         cout << "2- Inserir uma nova reserva e cliente: \n";
         cout << "3- Alterar inforamcoes de clientes: \n";
+        cout << "4- Sair \n";
         cin >> resp;
         system("cls");
 
@@ -73,17 +75,17 @@ void Funcionario::usar()
             printf("\r");
         }
 
-        switch(resp) {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-                Sleep(400);
-                cout << "Não Consegui ainda";
-                break;
+        if(resp = 1) {
+            clientes.imprime();
+        }else if(resp == 2) {
+            DefinirClientes();
+        }else if(resp == 3){
+            cout << "Não Consegui ainda";
+            Sleep(400);
+        }else if(resp == 4){
+            cout << "Tchau";
+            Sleep(400);
+            resposta = !resposta;
         }
 
     }while(resposta);
